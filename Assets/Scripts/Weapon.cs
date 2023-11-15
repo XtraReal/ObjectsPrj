@@ -5,7 +5,6 @@ public class Weapon
     private string weaponName;
     private float damage;
 
-
     public Weapon()
     {
 

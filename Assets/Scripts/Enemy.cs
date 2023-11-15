@@ -4,6 +4,7 @@ public class Enemy
 {
     private string enemyName;
     private float speed;
+    private EnemyType enemyType;
 
     public Health health = new Health();
 
@@ -25,5 +26,9 @@ public class Enemy
     public void Attack(float interval)
     {
         Debug.Log($"Enemy attacking with a {interval}, interval");
+    }
+    public void setEnemyType (EnemyType _enemyType)
+    {
+        enemyType = _enemyType;
     }
 }
