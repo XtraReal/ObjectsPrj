@@ -5,7 +5,7 @@ public class Player
     private string nickName;
     private float speed;
 
-    public Health health;
+    public Health health = new Health(100f,100f,20f);
 
     public void Move(Vector3 direction)
     {

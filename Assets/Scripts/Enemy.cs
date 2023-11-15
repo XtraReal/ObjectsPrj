@@ -1,18 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy
 {
-    // Start is called before the first frame update
-    void Start()
+    private string enemyName;
+    private float speed;
+
+    public Health health = new Health();
+
+    public void Move(Transform target)
     {
-        
+        Debug.Log($"Moving towards the target {target.name}");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Shoot(Vector3 direction, float speed)
     {
-        
+        Debug.Log($"Shooting a bullet towards {direction} with a speed of {speed}");
+    }
+
+    public void Die()
+    {
+        Debug.Log("Player Died");
+    }
+
+    public void Attack(float interval)
+    {
+        Debug.Log($"Enemy attacking with a {interval}, interval");
     }
 }

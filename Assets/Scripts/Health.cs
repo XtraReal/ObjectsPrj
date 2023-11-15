@@ -1,18 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health
 {
-    // Start is called before the first frame update
-    void Start()
+    private float currentHealth;
+    private float maxHealth;
+    private float healthRegenRate;
+
+
+    public Health()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public Health(float _currentHealth, float _maxHealth, float _healthRegenRate)
     {
-        
+        currentHealth = _currentHealth;
+        maxHealth = _maxHealth;
+        healthRegenRate = _healthRegenRate;
+    }
+
+    public Health (float _maxHealth)
+    {
+        maxHealth = _maxHealth;
+    }
+
+
+    public void AddHealth(float valueToAdd)
+    {
+        currentHealth += valueToAdd;
+    }
+
+    public void DeductHealth(float valueToDeduct)
+    {
+        currentHealth -= valueToDeduct;
     }
 }
