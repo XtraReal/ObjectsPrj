@@ -12,7 +12,7 @@ public class HealthPickup : Pickup, IDamageable
     public override void OnPicked()
     {
         base.OnPicked();
-
+        
         // Increase Player Health here!
 
     }

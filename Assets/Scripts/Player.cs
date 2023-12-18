@@ -10,14 +10,17 @@ public class Player : PlayableObject
 
     private void Start()
     {
+        health = new Health(100f, 100f, 0.5f);
+        playerRB = GetComponent<Rigidbody2D>();
         //Move();
-        Shoot(Vector3.zero, speed);
-        Die();
+        // Shoot(Vector3.zero, speed);
+        // Die();
     }
 
-    public override void Shoot(Vector3 direction, float speed)
+    public override void Shoot()
     {
-        Debug.Log($"Shooting a bullet towards {direction}, with a speed of {speed}");
+        Debug.Log($"Player is shooting a bullet");
+        // Debug.Log($"Shooting a bullet towards {direction}, with a speed of {speed}");
     }
 
     public override void Die()
@@ -29,9 +32,21 @@ public class Player : PlayableObject
     {
         playerRB.velocity = direction * speed * Time.deltaTime;
         var playerScreenPos = cam.WorldToScreenPoint(transform.position); // lets us get our (x,y) coordinates for our player
+        target.x -= playerScreenPos.x;
+        target.y -= playerScreenPos.y;
+
+        float angle = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0,0,angle);
+
+        //TODO: Target and Rotation
     }
 
     public override void Attack(float interval)
+    {
+
+    }
+    public override void GetDamage(float damage)
     {
 
     }
