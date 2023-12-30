@@ -17,6 +17,11 @@ public class Player : PlayableObject
         // Die();
     }
 
+    private void Update()
+    {
+        health.RegenerateHealth();
+    }
+
     public override void Shoot()
     {
         Debug.Log($"Player is shooting a bullet");
