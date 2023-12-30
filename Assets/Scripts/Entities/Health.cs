@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Health
+public class Health 
 {
     private float currentHealth;
     private float maxHealth;
@@ -44,5 +44,10 @@ public class Health
         }
 
         currentHealth = value;
+    }
+
+    public int GetHealth()
+    {
+        return 1;
     }
 }

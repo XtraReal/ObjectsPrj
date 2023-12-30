@@ -42,4 +42,8 @@ public class MeleeEnemy : Enemy
             target.GetComponent<IDamageable>().GetDamage(0);
         }
     }
+    public override void GetDamage(float damage)
+    {
+        health.DeductHealth(damage);
+    }
 }
