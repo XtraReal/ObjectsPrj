@@ -5,6 +5,16 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float speed;
 
+    private string targetTag;
+
+    public void SetBullet(float _damage, string _targetTag, float _speed = 10.0f)
+    {
+        this.damage = _damage;
+        this.speed = _speed;
+        this.targetTag = _targetTag;
+
+    }
+
     void Update()
     {
         Move();
@@ -30,6 +40,12 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Bullet collided with" + collision.gameObject.name);
+
+        // Check the target
+        if (!collision.gameObject.CompareTag(targetTag)) // Don't do damage if this isn't the correct target
+        {
+            return;
+        }
 
         // Using interface
         IDamageable damageable = collision.GetComponent<IDamageable>();

@@ -6,19 +6,25 @@ public class Player : PlayableObject
     [SerializeField] private Camera cam;
     [SerializeField] private float speed;
 
+    [SerializeField] private Bullet bulletPrefab;
+    [SerializeField] private float weaponDamage = 1.0f;
+    [SerializeField] private float bulletSpeed = 10.0f;
+
     private Rigidbody2D playerRB;
 
     private void Start()
     {
         health = new Health(100f, 100f, 0.5f);
         playerRB = GetComponent<Rigidbody2D>();
-        //Move();
-        // Shoot(Vector3.zero, speed);
-        // Die();
+
+
+        // Set Player Weapon
+        weapon = new Weapon("Player Weapon", weaponDamage, bulletSpeed);
     }
 
     private void Update()
     {
+        weapon.Shoot(bulletPrefab, this, "Enemy");
         health.RegenerateHealth();
     }
 

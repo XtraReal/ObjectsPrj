@@ -13,6 +13,7 @@ public abstract class PlayableObject : MonoBehaviour, IDamageable
     // Add Methods to implement polymorphism
 
     public virtual void Move(Vector2 direction) { }
+
     public virtual void Move(float speed) { }
 
     public abstract void Shoot();

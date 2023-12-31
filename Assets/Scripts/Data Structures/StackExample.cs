@@ -47,5 +47,6 @@ public class StackExample : MonoBehaviour
             Debug.Log("Object at the top of the stack is " + stack.Peek().name);
         }
 
+
     }
 }
