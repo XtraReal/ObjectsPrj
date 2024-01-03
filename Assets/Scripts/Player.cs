@@ -24,7 +24,10 @@ public class Player : PlayableObject
 
     private void Update()
     {
-        weapon.Shoot(bulletPrefab, this, "Enemy");
+        if (Input.GetMouseButtonUp(0))
+        {
+            weapon.Shoot(bulletPrefab, this, "Enemy");
+        }
         health.RegenerateHealth();
     }
 
