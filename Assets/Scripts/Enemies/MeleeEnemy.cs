@@ -7,6 +7,8 @@ public class MeleeEnemy : Enemy
     [SerializeField] private float attackRange;
     [SerializeField] private float attackTime = 0f;
 
+    [SerializeField] private health = SetHealth(1);
+
     private float timer = 0;
 
     protected override void Start()
