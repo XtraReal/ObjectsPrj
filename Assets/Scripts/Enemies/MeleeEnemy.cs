@@ -49,4 +49,10 @@ public class MeleeEnemy : Enemy
         base.GetDamage(damage);
         //health.DeductHealth(damage);
     }
+
+    public void SetMeleeEnemy(float attackRange, float attackTime)
+    {
+        this.attackRange = attackRange;
+        this.attackTime = attackTime;
+    }
 }
