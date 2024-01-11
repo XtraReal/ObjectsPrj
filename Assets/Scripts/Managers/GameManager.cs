@@ -15,7 +15,11 @@ public class GameManager : MonoBehaviour
     [Header("Game Variables")]
     [SerializeField] private float enemySpawnRate;
 
-    public GameObject tempEnemy;
+    [Header("Managers")]
+    public ScoreManager scoreManager;
+    public UIManager uiManager;
+
+    private GameObject tempEnemy;
     private bool isEnemySpawning;
 
     private Weapon meleeWeapon = new Weapon("Melee", 1, 0);
