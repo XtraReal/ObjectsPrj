@@ -33,7 +33,7 @@ public class Enemy : PlayableObject
 
     public override void Die()
     {
-        Debug.Log("Player Died");
+        Debug.Log("Enemy Died");
 
         Destroy(gameObject);
     }
@@ -67,10 +67,10 @@ public class Enemy : PlayableObject
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
-    public override void GetDamage(float damage)
-    {
-        base.GetDamage(damage);
-    }
+    //public override void GetDamage(float damage)
+    //{
+    //    base.GetDamage(damage);
+    //}
 
     
 }

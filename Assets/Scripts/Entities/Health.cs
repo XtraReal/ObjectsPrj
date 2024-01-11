@@ -55,8 +55,8 @@ public class Health
         currentHealth = value;
     }
 
-    public int GetHealth()
+    public float GetHealth()
     {
-        return 1;
+        return currentHealth;
     }
 }

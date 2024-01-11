@@ -30,6 +30,8 @@ public class MeleeEnemy : Enemy
         {
             Attack(attackTime);
         }
+
+        Debug.Log("Enemy Health is " + health.GetHealth());
     }
 
     public override void Attack (float interval)
@@ -44,11 +46,11 @@ public class MeleeEnemy : Enemy
             target.GetComponent<IDamageable>().GetDamage(0);
         }
     }
-    public override void GetDamage(float damage)
-    {
-        base.GetDamage(damage);
-        //health.DeductHealth(damage);
-    }
+    //public override void GetDamage(float damage)
+    //{
+    //    base.GetDamage(damage);
+    //    //health.DeductHealth(damage);
+    //}
 
     public void SetMeleeEnemy(float attackRange, float attackTime)
     {
