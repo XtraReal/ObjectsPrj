@@ -5,7 +5,7 @@ using UnityEngine;
 public class MeleeEnemy : Enemy
 {
     [SerializeField] private float attackRange;
-    [SerializeField] private float attackTime = 0f;
+    [SerializeField] private float attackTime = 1f;
 
     //[SerializeField] private health = SetHealth(1);
 
@@ -43,7 +43,7 @@ public class MeleeEnemy : Enemy
         }
         else{
             timer = 0;
-            target.GetComponent<IDamageable>().GetDamage(0);
+            target.GetComponent<IDamageable>().GetDamage(weapon.GetDamage());
         }
     }
     //public override void GetDamage(float damage)
